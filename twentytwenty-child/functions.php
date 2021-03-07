@@ -1,4 +1,6 @@
 <?php
+include('./API/restapi.php');
+
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 
 function enqueue_parent_styles() {
