@@ -14,14 +14,14 @@ function get_menu() {
 }
 
 add_action( 'rest_api_init', function () {
-    register_rest_route( 'myroutes', '/acfdata', array(
+    register_rest_route( 'myroutes', '/custom/home-page', array(
         'methods' => 'GET',
-        'callback' => 'get_pages_data',
+        'callback' => 'get_page_data',
         )
     );
 });
 
-function get_pages_data() {
+function get_page_data() {
     $args = array(
         'post_status' => 'publish',
     );
