@@ -1,0 +1,17 @@
+/*
+ Theme Name:   Twenty Twenty Child Theme
+ description: >-A child theme of the Twenty Twenty default WordPress theme
+ Author:       Gaurav Kadnurrao
+ Template:     twentytwenty
+ Version:      1.0.0
+*/
+
+.entry-header {
+    padding: 0 5%;
+ }
+ .entry-title, .widecolumn h2 {
+    margin-bottom: 0.5em;
+ }
+ .entry-content, .entry-summary {
+    padding: 0 5% 10%;
+ }
