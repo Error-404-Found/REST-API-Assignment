@@ -8,12 +8,25 @@ add_action( 'rest_api_init', function () {
         'methods' => 'GET',
         'callback' => 'get_menu',
     ) );
- } );
- add_action( 'rest_api_init', function () {
-    register_rest_route( 'my_endpoint/v1', '/acfdata', array(
+});
+function get_menu() {
+    return wp_get_nav_menu_items('menu');
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'myroutes', '/acfdata', array(
         'methods' => 'GET',
-        'callback' => 'get_all_data',
+        'callback' => 'get_pages_data',
         )
     );
+});
+
+function get_pages_data() {
+    $args = array(
+        'post_status' => 'publish',
+    );
+    $posts = get_pages($args);
+    foreach ($posts as $key => $post) {
+        return $posts[$key]->acf = get_fields($post->ID);
+    }
 }
-);
