@@ -9,3 +9,11 @@ add_action( 'rest_api_init', function () {
         'callback' => 'get_menu',
     ) );
  } );
+ add_action( 'rest_api_init', function () {
+    register_rest_route( 'my_endpoint/v1', '/acfdata', array(
+        'methods' => 'GET',
+        'callback' => 'get_all_data',
+        )
+    );
+}
+);
