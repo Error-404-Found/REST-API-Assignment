@@ -5,4 +5,7 @@ function enqueue_parent_styles() {
    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
+function get_menu() {
+    return wp_get_nav_menu_items('menu');
+}
 ?>
